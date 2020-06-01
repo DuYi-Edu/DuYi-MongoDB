@@ -17,6 +17,7 @@ var opSchema = new Schema({
   userid: {
     type: Schema.Types.ObjectId,
     required: true,
+    ref: "User",
   },
   extraInfo: {
     type: Object,

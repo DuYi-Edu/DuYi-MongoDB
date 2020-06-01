@@ -34,8 +34,9 @@ var userSchema = new Schema({
   },
   address: {
     type: addressSchema,
-    required: true
+    required: true,
   },
+  operations: [{ type: Schema.Types.ObjectId, ref: "Operation" }],
 });
 
 module.exports = mongoose.model("User", userSchema);
