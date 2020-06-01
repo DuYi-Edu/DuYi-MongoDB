@@ -6,18 +6,15 @@ var userSchema = new Schema({
   loginId: {
     type: String,
     required: true,
-    index: true,
     unique: true,
     trim: true,
-    minlength: 6,
+    minlength: 3,
     maxlength: 18,
   }, // String is shorthand for {type: String}
   loginPwd: {
     type: String,
     required: true,
     trim: true,
-    minlength: 6,
-    maxlength: 18,
     select: false,
   },
   name: {
@@ -27,13 +24,17 @@ var userSchema = new Schema({
     minlength: 2,
     maxlength: 10,
   },
+  age: {
+    type: Number,
+    default: 18,
+  },
   loves: {
     type: [String],
     default: [],
   },
   address: {
     type: addressSchema,
-    required: true,
+    required: true
   },
 });
 

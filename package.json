@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +12,7 @@
     "mongoose": "^5.9.15"
   },
   "devDependencies": {
-    "@types/node": "^14.0.5"
+    "@types/node": "^14.0.5",
+    "nodemon": "^2.0.4"
   }
 }
