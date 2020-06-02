@@ -1,34 +1,23 @@
 var { User, Operation } = require("./models");
-const ObjectId = require("mongoose").Types.ObjectId;
 
 async function test() {
-  // const result = await User.findById(ObjectId("5ed093872e3da2b654983476"), {
-  //   name: 1,
-  //   age: 1,
-  // });
+  // const u = await User.findById("5ed093872e3da2b65498347c");
+  // u.address.province = "黑龙江";
+  // u.address.city = "哈尔滨";
+  // u.loves.push("秋葵", "香菜");
+  // await u.save(); // 此时会自动对比新旧文档，完成更新
 
-  // const result = await User.findOne({
-  //   age: {
-  //     $gt: 20,
-  //   },
-  // });
-  // const page = 3;
-  // const limit = 10;
-  // const result = await User.find(
-  //   {
-  //     age: {
-  //       $gt: 30,
-  //     },
-  //   },
-  //   "name age"
-  // )
-  //   .skip((page - 1) * limit)
-  //   .limit(limit)
-  //   .sort("-age");
-  // console.log(result);
-
-  // const result = await User.find().limit(1).populate("operations");
-  // console.log(result);
+  await User.updateOne(
+    {
+      _id: "5ed093872e3da2b65498347c",
+    },
+    {
+      loginId: "a",
+    },
+    {
+      runValidators: true,
+    }
+  );
 }
 
 test();
