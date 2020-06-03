@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+const { updateIfCurrentPlugin } = require("../mongoose-update-if-current/lib");
 var Schema = mongoose.Schema;
 const addressSchema = require("./addressSchema");
 
@@ -38,5 +39,5 @@ var userSchema = new Schema({
   },
   operations: [{ type: Schema.Types.ObjectId, ref: "Operation" }],
 });
-
+userSchema.plugin(updateIfCurrentPlugin);
 module.exports = mongoose.model("User", userSchema);

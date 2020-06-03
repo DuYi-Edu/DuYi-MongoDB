@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^5.9.15"
+    "mongoose": "^5.9.15",
+    "mongoose-update-if-current": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^14.0.5",
