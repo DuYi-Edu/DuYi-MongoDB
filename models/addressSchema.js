@@ -1,7 +1,6 @@
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
 
-module.exports = new Schema({
+module.exports = new mongoose.Schema({
   province: {
     type: String,
     required: true,
